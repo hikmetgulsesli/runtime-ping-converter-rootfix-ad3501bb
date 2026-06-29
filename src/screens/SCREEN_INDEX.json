@@ -1,0 +1,567 @@
+[
+  {
+    "screenId": "2de2cf32083e4c55b5e1f97727121dc9",
+    "title": "Record Operations - Runtime Ping Converter Rootfix",
+    "componentName": "RecordOperationsRuntimePingConverterRootfix",
+    "file": "src/screens/RecordOperationsRuntimePingConverterRootfix.tsx",
+    "buttons": 24,
+    "inputs": 1,
+    "links": 8,
+    "actions": [
+      {
+        "id": "act-create-record-1",
+        "kind": "button",
+        "label": "ACT_CREATE_RECORD",
+        "index": 0
+      },
+      {
+        "id": "settings-2",
+        "kind": "button",
+        "label": "Settings",
+        "index": 1
+      },
+      {
+        "id": "help-3",
+        "kind": "button",
+        "label": "Help",
+        "index": 2
+      },
+      {
+        "id": "act-retry-load-4",
+        "kind": "button",
+        "label": "ACT_RETRY_LOAD",
+        "index": 3
+      },
+      {
+        "id": "act-create-record-5",
+        "kind": "button",
+        "label": "ACT_CREATE_RECORD",
+        "index": 4
+      },
+      {
+        "id": "status-all-6",
+        "kind": "button",
+        "label": "Status: All",
+        "index": 5
+      },
+      {
+        "id": "date-last-7-days-7",
+        "kind": "button",
+        "label": "Date: Last 7 Days",
+        "index": 6
+      },
+      {
+        "id": "view-details-8",
+        "kind": "button",
+        "label": "View Details",
+        "index": 7
+      },
+      {
+        "id": "edit-9",
+        "kind": "button",
+        "label": "Edit",
+        "index": 8
+      },
+      {
+        "id": "delete-10",
+        "kind": "button",
+        "label": "Delete",
+        "index": 9
+      },
+      {
+        "id": "view-details-11",
+        "kind": "button",
+        "label": "View Details",
+        "index": 10
+      },
+      {
+        "id": "edit-12",
+        "kind": "button",
+        "label": "Edit",
+        "index": 11
+      },
+      {
+        "id": "delete-13",
+        "kind": "button",
+        "label": "Delete",
+        "index": 12
+      },
+      {
+        "id": "view-details-14",
+        "kind": "button",
+        "label": "View Details",
+        "index": 13
+      },
+      {
+        "id": "edit-15",
+        "kind": "button",
+        "label": "Edit",
+        "index": 14
+      },
+      {
+        "id": "delete-16",
+        "kind": "button",
+        "label": "Delete",
+        "index": 15
+      },
+      {
+        "id": "view-details-17",
+        "kind": "button",
+        "label": "View Details",
+        "index": 16
+      },
+      {
+        "id": "edit-18",
+        "kind": "button",
+        "label": "Edit",
+        "index": 17
+      },
+      {
+        "id": "delete-19",
+        "kind": "button",
+        "label": "Delete",
+        "index": 18
+      },
+      {
+        "id": "previous-20",
+        "kind": "button",
+        "label": "Previous",
+        "index": 19
+      },
+      {
+        "id": "1-21",
+        "kind": "button",
+        "label": "1",
+        "index": 20
+      },
+      {
+        "id": "2-22",
+        "kind": "button",
+        "label": "2",
+        "index": 21
+      },
+      {
+        "id": "3-23",
+        "kind": "button",
+        "label": "3",
+        "index": 22
+      },
+      {
+        "id": "next-24",
+        "kind": "button",
+        "label": "Next",
+        "index": 23
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "board-2",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "editor-4",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "operations-5",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "board-6",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "insights-7",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 6
+      },
+      {
+        "id": "editor-8",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 7
+      }
+    ]
+  },
+  {
+    "screenId": "a8436a455f774bbb82493cc262a77fa2",
+    "title": "Record Editor - Runtime Ping Converter Rootfix",
+    "componentName": "RecordEditorRuntimePingConverterRootfix",
+    "file": "src/screens/RecordEditorRuntimePingConverterRootfix.tsx",
+    "buttons": 7,
+    "inputs": 3,
+    "links": 7,
+    "actions": [
+      {
+        "id": "new-record-1",
+        "kind": "button",
+        "label": "New Record",
+        "index": 0
+      },
+      {
+        "id": "menu-2",
+        "kind": "button",
+        "label": "Menu",
+        "index": 1
+      },
+      {
+        "id": "settings-3",
+        "kind": "button",
+        "label": "Settings",
+        "index": 2
+      },
+      {
+        "id": "help-4",
+        "kind": "button",
+        "label": "Help",
+        "index": 3
+      },
+      {
+        "id": "show-advanced-configuration-5",
+        "kind": "button",
+        "label": "Show Advanced Configuration",
+        "index": 4
+      },
+      {
+        "id": "cancel-6",
+        "kind": "button",
+        "label": "Cancel",
+        "index": 5
+      },
+      {
+        "id": "save-record-7",
+        "kind": "button",
+        "label": "Save Record",
+        "index": 6
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "board-2",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "editor-4",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "operations-5",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "board-6",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "insights-7",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "58ab19fd52374703ad2afd684a7426f0",
+    "title": "Pipeline Board - Runtime Ping Converter Rootfix",
+    "componentName": "PipelineBoardRuntimePingConverterRootfix",
+    "file": "src/screens/PipelineBoardRuntimePingConverterRootfix.tsx",
+    "buttons": 14,
+    "inputs": 1,
+    "links": 7,
+    "actions": [
+      {
+        "id": "new-record-1",
+        "kind": "button",
+        "label": "New Record",
+        "index": 0
+      },
+      {
+        "id": "menu-2",
+        "kind": "button",
+        "label": "Menu",
+        "index": 1
+      },
+      {
+        "id": "settings-3",
+        "kind": "button",
+        "label": "Settings",
+        "index": 2
+      },
+      {
+        "id": "help-4",
+        "kind": "button",
+        "label": "Help",
+        "index": 3
+      },
+      {
+        "id": "filter-5",
+        "kind": "button",
+        "label": "Filter",
+        "index": 4
+      },
+      {
+        "id": "sort-6",
+        "kind": "button",
+        "label": "Sort",
+        "index": 5
+      },
+      {
+        "id": "more-horiz-7",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 6
+      },
+      {
+        "id": "play-arrow-8",
+        "kind": "button",
+        "label": "Play Arrow",
+        "index": 7
+      },
+      {
+        "id": "play-arrow-9",
+        "kind": "button",
+        "label": "Play Arrow",
+        "index": 8
+      },
+      {
+        "id": "more-horiz-10",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 9
+      },
+      {
+        "id": "pause-11",
+        "kind": "button",
+        "label": "Pause",
+        "index": 10
+      },
+      {
+        "id": "more-horiz-12",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 11
+      },
+      {
+        "id": "resolve-13",
+        "kind": "button",
+        "label": "Resolve",
+        "index": 12
+      },
+      {
+        "id": "more-horiz-14",
+        "kind": "button",
+        "label": "More Horiz",
+        "index": 13
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "board-2",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "editor-4",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "operations-5",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "board-6",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "insights-7",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "screenId": "e6db56cc034c4db886f9d4213f6b0813",
+    "title": "Insights - Runtime Ping Converter Rootfix",
+    "componentName": "InsightsRuntimePingConverterRootfix",
+    "file": "src/screens/InsightsRuntimePingConverterRootfix.tsx",
+    "buttons": 8,
+    "inputs": 0,
+    "links": 7,
+    "actions": [
+      {
+        "id": "settings-1",
+        "kind": "button",
+        "label": "Settings",
+        "index": 0
+      },
+      {
+        "id": "help-2",
+        "kind": "button",
+        "label": "Help",
+        "index": 1
+      },
+      {
+        "id": "new-record-3",
+        "kind": "button",
+        "label": "New Record",
+        "index": 2
+      },
+      {
+        "id": "filter-insights-4",
+        "kind": "button",
+        "label": "Filter Insights",
+        "index": 3
+      },
+      {
+        "id": "export-summary-5",
+        "kind": "button",
+        "label": "Export Summary",
+        "index": 4
+      },
+      {
+        "id": "1h-6",
+        "kind": "button",
+        "label": "1H",
+        "index": 5
+      },
+      {
+        "id": "24h-7",
+        "kind": "button",
+        "label": "24H",
+        "index": 6
+      },
+      {
+        "id": "7d-8",
+        "kind": "button",
+        "label": "7D",
+        "index": 7
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "board-2",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "operations-4",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "board-5",
+        "kind": "link",
+        "label": "Board",
+        "href": "#",
+        "index": 4
+      },
+      {
+        "id": "insights-6",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 5
+      },
+      {
+        "id": "editor-7",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 6
+      }
+    ]
+  }
+]
