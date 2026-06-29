@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Record Operations - Runtime Ping Converter Rootfix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "tertiary": "#1e1200",
+                      "tertiary-fixed-dim": "#ddc39d",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d8e3fb",
+                      "background": "#fbf8fa",
+                      "on-tertiary-fixed-variant": "#564427",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#bcc7de",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed": "#0b1c30",
+                      "on-surface": "#1b1b1d",
+                      "surface-tint": "#545f73",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "tertiary-container": "#35260c",
+                      "on-tertiary-container": "#a38c6a",
+                      "secondary-container": "#d0e1fb",
+                      "surface": "#fbf8fa",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f5f3f4",
+                      "primary": "#091426",
+                      "on-primary-container": "#8590a6",
+                      "surface-container": "#f0edef",
+                      "on-primary-fixed": "#111c2d",
+                      "on-tertiary-fixed": "#271902",
+                      "inverse-surface": "#303032",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dcd9db",
+                      "surface-bright": "#fbf8fa",
+                      "on-background": "#1b1b1d",
+                      "on-secondary-container": "#54647a",
+                      "tertiary-fixed": "#fadfb8",
+                      "surface-container-high": "#eae7e9",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#45474c",
+                      "inverse-on-surface": "#f3f0f2",
+                      "secondary": "#505f76",
+                      "primary-container": "#1e293b",
+                      "secondary-fixed": "#d3e4fe",
+                      "outline-variant": "#c5c6cd",
+                      "primary-fixed-dim": "#bcc7de",
+                      "surface-variant": "#e4e2e3",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#e4e2e3",
+                      "outline": "#75777d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "gutter": "16px",
+                      "md": "16px",
+                      "margin-desktop": "24px",
+                      "sm": "8px",
+                      "margin-mobile": "12px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "code-sm": ["JetBrains Mono"],
+                      "label-caps": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "code-md": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "code-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "code-md": ["13px", {"lineHeight": "20px", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- Mobile Top Navigation (md:hidden) -->
+<header class="md:hidden bg-surface dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center w-full px-lg mx-auto h-16 sticky top-0 z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary dark:text-primary-fixed">Runtime Ping Converter Rootfix</h1>
+</div>
+<div class="flex items-center gap-md text-primary dark:text-on-primary-fixed">
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-1 rounded" data-icon="settings">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-1 rounded" data-icon="help">help</span>
+</div>
+</header>
+<!-- SideNavBar (Web) -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full w-[240px] bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline flat no shadows p-md gap-sm transition-all duration-200 ease-in-out z-40">
+<!-- Header -->
+<div class="flex flex-col mb-xl gap-sm">
+<div class="flex items-center gap-sm">
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A small, professional avatar placeholder image, completely blank light gray circle with a darker gray border, suitable for a system admin profile picture in a technical dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUPL04ydw5rV6HVm5rdfxcuvRx87C0csSYNjUWhXK-6Syh3ft0XhxRbZcbHpC1D0cTzhjJjNBEmR0kN9vhirthRdX_Yof-AyZX5_5DFb1w3B_5nXjrdLXl9ZO2Fyr7vuBX4R375kXdBSR8U5jC-qt295_SY6B6eceqDBFgLlyy-ZLqvsEj6OBQdtko1uPFi7OTLIcYy9bDYqIanVAlUnzmP2LzvmhZnKUZKcRD5HuzMRWSCO0vR-l3epoJYCJgL7Pss71We1dnrLsI"/>
+<div>
+<h2 class="text-headline-md font-headline-md text-primary dark:text-primary-fixed">Rootfix Console</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">System Admin</p>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-xs flex-grow">
+<!-- Active Tab: Operations -->
+<a class="flex items-center gap-sm p-sm bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="data_thresholding">data_thresholding</span>
+<span class="text-body-sm font-body-sm">Operations</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-variant dark:hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-body-sm font-body-sm">Board</span>
+</a>
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-variant dark:hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-body-sm font-body-sm">Insights</span>
+</a>
+<a class="flex items-center gap-sm p-sm text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-variant dark:hover:bg-surface-container-high rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="text-body-sm font-body-sm">Editor</span>
+</a>
+</div>
+<!-- CTA -->
+<div class="mt-auto">
+<button aria-label="ACT_CREATE_RECORD" class="w-full bg-primary-container text-on-primary font-body-sm font-semibold py-sm rounded flex items-center justify-center gap-xs hover:bg-primary transition-colors focus:ring-2 focus:ring-primary-container focus:outline-none">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                New Record
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col md:ml-[240px] w-full min-h-screen">
+<!-- Desktop Top App Bar (If needed for horizontal nav, though side nav is primary on desktop based on layout mandate. We will use a simplified header area for the canvas title and actions) -->
+<div class="hidden md:flex justify-between items-center w-full px-lg mx-auto h-16 border-b border-outline-variant bg-surface sticky top-0 z-30">
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary">Runtime Ping Converter Rootfix - Operations</h1>
+<div class="flex items-center gap-md text-on-surface-variant">
+<button aria-label="Settings" class="hover:bg-surface-container-low p-1 rounded text-secondary">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button aria-label="Help" class="hover:bg-surface-container-low p-1 rounded text-secondary">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</div>
+<!-- Dashboard Content -->
+<div class="p-margin-mobile md:p-margin-desktop w-full max-w-[1600px] mx-auto flex flex-col gap-lg flex-grow">
+<!-- Page Header & Primary Actions -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-primary">Record Operations</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Manage and monitor runtime ping conversions.</p>
+</div>
+<div class="flex items-center gap-sm">
+<button aria-label="ACT_RETRY_LOAD" class="bg-surface border border-outline-variant text-primary px-md py-sm rounded text-body-sm font-semibold hover:bg-surface-container-low transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="refresh">refresh</span>
+                        Retry Load
+                    </button>
+<button aria-label="ACT_CREATE_RECORD" class="bg-primary-container text-on-primary px-md py-sm rounded text-body-sm font-semibold hover:opacity-90 transition-opacity flex items-center gap-xs shadow-sm focus:ring-2 focus:ring-primary-container focus:ring-offset-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="add_circle">add_circle</span>
+                        Create Record
+                    </button>
+</div>
+</div>
+<!-- Summary Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Metric Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-xs">Total Records</span>
+<span class="text-headline-lg font-headline-lg text-primary">124,592</span>
+<div class="flex items-center gap-1 mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-[#059669]" data-icon="trending_up">trending_up</span>
+<span class="text-[#059669]">+2.4%</span> vs last week
+                    </div>
+</div>
+<!-- Metric Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-xs">Success Rate</span>
+<span class="text-headline-lg font-headline-lg text-primary">99.8%</span>
+<div class="flex items-center gap-1 mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" data-icon="horizontal_rule">horizontal_rule</span>
+                        Stable
+                    </div>
+</div>
+<!-- Metric Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col">
+<span class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-xs">Avg Latency</span>
+<span class="text-headline-lg font-headline-lg text-primary">42ms</span>
+<div class="flex items-center gap-1 mt-2 text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-[#D97706]" data-icon="trending_down">trending_down</span>
+<span class="text-[#D97706]">-5ms</span> vs last week
+                    </div>
+</div>
+</div>
+<!-- Data Table Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded flex flex-col flex-grow overflow-hidden">
+<!-- Toolbar: Search & Filters -->
+<div class="p-md border-b border-outline-variant flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md bg-surface-container-low">
+<!-- Search -->
+<div class="relative w-full sm:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input aria-label="ACT_SEARCH_RECORDS" class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded text-body-md font-body-md focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-shadow" placeholder="Search records by ID or Ping..." type="text"/>
+</div>
+<!-- Filters -->
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<div class="relative group">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant px-sm py-1.5 rounded text-body-sm font-body-sm hover:bg-surface-container-low transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="filter_list">filter_list</span>
+                                Status: All
+                                <span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+</div>
+<div class="relative group">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface-variant px-sm py-1.5 rounded text-body-sm font-body-sm hover:bg-surface-container-low transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="calendar_today">calendar_today</span>
+                                Date: Last 7 Days
+                                <span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="p-sm px-md text-label-caps font-label-caps text-on-surface-variant font-semibold">Record ID</th>
+<th class="p-sm px-md text-label-caps font-label-caps text-on-surface-variant font-semibold">Status</th>
+<th class="p-sm px-md text-label-caps font-label-caps text-on-surface-variant font-semibold">Last Ping</th>
+<th class="p-sm px-md text-label-caps font-label-caps text-on-surface-variant font-semibold">Payload Size</th>
+<th class="p-sm px-md text-label-caps font-label-caps text-on-surface-variant font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-sm px-md font-code-md text-primary">RT-8492-AX</td>
+<td class="p-sm px-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                                        ACTIVE
+                                    </span>
+</td>
+<td class="p-sm px-md text-on-surface-variant">2023-10-27 14:32:01 UTC</td>
+<td class="p-sm px-md text-on-surface-variant">1.2 KB</td>
+<td class="p-sm px-md text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button aria-label="View Details" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span></button>
+<button aria-label="Edit" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button aria-label="Delete" class="text-secondary hover:text-error p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-sm px-md font-code-md text-primary">RT-8493-BY</td>
+<td class="p-sm px-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span>
+                                        DELAYED
+                                    </span>
+</td>
+<td class="p-sm px-md text-on-surface-variant">2023-10-27 14:30:15 UTC</td>
+<td class="p-sm px-md text-on-surface-variant">4.5 KB</td>
+<td class="p-sm px-md text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button aria-label="View Details" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span></button>
+<button aria-label="Edit" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button aria-label="Delete" class="text-secondary hover:text-error p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-sm px-md font-code-md text-primary">RT-8494-CZ</td>
+<td class="p-sm px-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-100 text-red-800 text-[11px] font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[12px]" data-icon="error">error</span>
+                                        FAILED
+                                    </span>
+</td>
+<td class="p-sm px-md text-on-surface-variant">2023-10-27 14:25:50 UTC</td>
+<td class="p-sm px-md text-on-surface-variant">0.8 KB</td>
+<td class="p-sm px-md text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button aria-label="View Details" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span></button>
+<button aria-label="Edit" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button aria-label="Delete" class="text-secondary hover:text-error p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-sm px-md font-code-md text-primary">RT-8495-DW</td>
+<td class="p-sm px-md">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-semibold tracking-wide">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle">check_circle</span>
+                                        ACTIVE
+                                    </span>
+</td>
+<td class="p-sm px-md text-on-surface-variant">2023-10-27 14:20:11 UTC</td>
+<td class="p-sm px-md text-on-surface-variant">2.1 KB</td>
+<td class="p-sm px-md text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button aria-label="View Details" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span></button>
+<button aria-label="Edit" class="text-secondary hover:text-primary p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span></button>
+<button aria-label="Delete" class="text-secondary hover:text-error p-1 rounded"><span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer -->
+<div class="p-sm px-md border-t border-outline-variant bg-surface-container-lowest flex justify-between items-center text-body-sm text-on-surface-variant">
+<span>Showing 1 to 4 of 124,592 entries</span>
+<div class="flex gap-1">
+<button class="px-2 py-1 rounded hover:bg-surface-container-low disabled:opacity-50" disabled="">Previous</button>
+<button class="px-2 py-1 rounded bg-surface-container-high text-primary font-semibold">1</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container-low">2</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container-low">3</button>
+<span class="px-2 py-1">...</span>
+<button class="px-2 py-1 rounded hover:bg-surface-container-low">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only - hidden on md) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-outline-variant flex justify-around items-center h-16 z-50 px-2 pb-safe">
+<a class="flex flex-col items-center justify-center w-full h-full text-primary dark:text-primary-fixed font-bold border-t-2 border-primary pt-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="data_thresholding" data-weight="fill">data_thresholding</span>
+<span class="text-[10px] mt-1 font-medium">Operations</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low transition-colors pt-1 border-t-2 border-transparent" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] mt-1 font-medium">Board</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low transition-colors pt-1 border-t-2 border-transparent" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="analytics">analytics</span>
+<span class="text-[10px] mt-1 font-medium">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low transition-colors pt-1 border-t-2 border-transparent" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="edit_note">edit_note</span>
+<span class="text-[10px] mt-1 font-medium">Editor</span>
+</a>
+</nav>
+</body></html>

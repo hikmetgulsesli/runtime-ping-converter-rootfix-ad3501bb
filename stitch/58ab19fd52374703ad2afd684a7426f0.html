@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pipeline Board - Runtime Ping Converter Rootfix</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary": "#ffffff",
+                      "tertiary": "#1e1200",
+                      "tertiary-fixed-dim": "#ddc39d",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#d8e3fb",
+                      "background": "#fbf8fa",
+                      "on-tertiary-fixed-variant": "#564427",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#bcc7de",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed": "#0b1c30",
+                      "on-surface": "#1b1b1d",
+                      "surface-tint": "#545f73",
+                      "on-secondary-fixed-variant": "#38485d",
+                      "tertiary-container": "#35260c",
+                      "on-tertiary-container": "#a38c6a",
+                      "secondary-container": "#d0e1fb",
+                      "surface": "#fbf8fa",
+                      "secondary-fixed-dim": "#b7c8e1",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f5f3f4",
+                      "primary": "#091426",
+                      "on-primary-container": "#8590a6",
+                      "surface-container": "#f0edef",
+                      "on-primary-fixed": "#111c2d",
+                      "on-tertiary-fixed": "#271902",
+                      "inverse-surface": "#303032",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#dcd9db",
+                      "surface-bright": "#fbf8fa",
+                      "on-background": "#1b1b1d",
+                      "on-secondary-container": "#54647a",
+                      "tertiary-fixed": "#fadfb8",
+                      "surface-container-high": "#eae7e9",
+                      "error-container": "#ffdad6",
+                      "on-surface-variant": "#45474c",
+                      "inverse-on-surface": "#f3f0f2",
+                      "secondary": "#505f76",
+                      "primary-container": "#1e293b",
+                      "secondary-fixed": "#d3e4fe",
+                      "outline-variant": "#c5c6cd",
+                      "primary-fixed-dim": "#bcc7de",
+                      "surface-variant": "#e4e2e3",
+                      "on-secondary": "#ffffff",
+                      "surface-container-highest": "#e4e2e3",
+                      "outline": "#75777d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "gutter": "16px",
+                      "md": "16px",
+                      "margin-desktop": "24px",
+                      "sm": "8px",
+                      "margin-mobile": "12px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "code-sm": ["JetBrains Mono"],
+                      "label-caps": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "code-md": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "code-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "code-md": ["13px", {"lineHeight": "20px", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for Kanban board to keep it clean */
+        ::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8FAFC; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .kanban-board {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 16px;
+            height: calc(100vh - 64px - 100px); /* Approx calc taking header/subheaders into account */
+        }
+        .kanban-lane {
+            min-width: 320px;
+            width: 320px;
+            background: #F5F3F4; /* surface-container-low */
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+        .kanban-cards-container {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md m-0 p-0 overflow-hidden flex h-screen">
+<!-- SideNavBar (Hidden on Mobile) -->
+<nav class="hidden md:flex flex-col h-full p-md gap-sm bg-surface-container-low dark:bg-surface-container-lowest text-primary dark:text-primary-fixed fixed left-0 top-0 w-[240px] border-r border-outline-variant dark:border-outline z-20 transition-all duration-200 ease-in-out">
+<!-- Header -->
+<div class="flex items-center gap-sm mb-lg px-sm">
+<img alt="User Profile" class="w-[32px] h-[32px] rounded-full object-cover border border-outline-variant" data-alt="A small, professional 32x32 user avatar photo. Crisp, clear, neutral background. Corporate environment styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsfM9OO-cubIfs4pFObwHZY3vOYT327nPs9XGSjkPE12rY7YCcUEy6Ye3m13GSqNXo7-C92f-c2HHPAbamGPn_Jr7HwyA6IQBNFp2siGOXPRjPBJTGT-z0RI-kEJ2obdJhAvJi34uT_-khSDopm6yJN6Keqsr96wyUOgqdTSvPNrJ4Gd_XzYc6JHKWK77W2ySoPvWURvkVbAlscP3r45-G_gWMgWdKD_6BPr9HsSAg0ttNjOG2AMyJcjT4nUj1464KifLfMAcE1xs-"/>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold tracking-tight">Rootfix Console</h1>
+<p class="text-body-sm font-body-sm text-secondary">System Admin</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-xs flex-grow">
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">data_thresholding</span>
+                Operations
+            </a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-body-sm font-body-sm bg-secondary-container text-on-secondary-container font-bold transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Board
+            </a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+                Insights
+            </a>
+<a class="flex items-center gap-sm px-md py-sm rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">edit_note</span>
+                Editor
+            </a>
+</div>
+<!-- CTA -->
+<button class="w-full py-sm bg-primary-container text-on-primary rounded-DEFAULT text-body-sm font-bold flex justify-center items-center gap-xs hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Record
+        </button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col md:ml-[240px] h-full w-full overflow-hidden bg-background">
+<!-- TopNavBar (Responsive) -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center w-full px-lg max-w-[1600px] mx-auto h-16 shrink-0 z-10 relative">
+<div class="flex items-center gap-md">
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-secondary p-xs rounded-DEFAULT hover:bg-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="text-headline-md font-headline-md font-extrabold text-primary">Runtime Ping Converter Rootfix</div>
+</div>
+<!-- Web Nav Cluster -->
+<div class="hidden md:flex items-center gap-md h-full">
+<a class="h-full flex items-center px-sm text-secondary font-body-md hover:bg-surface-container-low transition-colors" href="#">Operations</a>
+<a class="h-full flex items-center px-sm text-primary font-bold border-b-2 border-primary hover:bg-surface-container-low transition-colors" href="#">Board</a>
+<a class="h-full flex items-center px-sm text-secondary font-body-md hover:bg-surface-container-low transition-colors" href="#">Insights</a>
+</div>
+<div class="flex items-center gap-md">
+<!-- Search -->
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="pl-xl pr-sm py-[6px] border border-outline-variant rounded-DEFAULT bg-surface text-body-sm font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none w-[200px] xl:w-[300px]" placeholder="Search records..." type="text"/>
+</div>
+<button class="text-secondary hover:bg-surface-container-low p-xs rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-secondary hover:bg-surface-container-low p-xs rounded-DEFAULT transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</header>
+<!-- Board Toolbar -->
+<div class="px-lg py-md flex flex-wrap justify-between items-center gap-md shrink-0 border-b border-surface-variant bg-surface">
+<div class="flex items-center gap-sm">
+<h2 class="text-headline-md font-headline-md font-bold text-on-surface">Pipeline</h2>
+<span class="bg-surface-variant text-on-surface-variant text-label-caps font-label-caps px-2 py-1 rounded-full">14 Active</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="px-sm py-1 border border-outline-variant rounded-DEFAULT text-body-sm font-body-md text-primary bg-surface hover:bg-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">filter_list</span> Filter
+                </button>
+<button class="px-sm py-1 border border-outline-variant rounded-DEFAULT text-body-sm font-body-md text-primary bg-surface hover:bg-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">sort</span> Sort
+                </button>
+</div>
+</div>
+<!-- Kanban Board Area -->
+<div class="flex-grow p-md overflow-hidden bg-background">
+<div class="kanban-board">
+<!-- LANE: Queued -->
+<div class="kanban-lane">
+<div class="p-sm border-b border-outline-variant bg-surface rounded-t-DEFAULT flex justify-between items-center shrink-0">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="text-label-caps font-label-caps text-secondary font-bold">Queued</span>
+<span class="text-label-caps font-label-caps text-outline bg-surface-variant px-1 rounded-sm ml-1">3</span>
+</div>
+<button class="text-secondary hover:bg-surface-variant rounded-sm p-[2px]"><span class="material-symbols-outlined text-[16px]">more_horiz</span></button>
+</div>
+<div class="kanban-cards-container">
+<!-- Card 1 -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT p-sm shadow-sm hover:border-primary cursor-pointer transition-colors group">
+<div class="flex justify-between items-start mb-sm">
+<div class="text-code-sm font-code-sm text-secondary bg-surface-variant px-1 rounded-sm border border-outline-variant">RT-8492</div>
+<span class="text-label-caps font-label-caps text-secondary">2m ago</span>
+</div>
+<h3 class="text-body-sm font-body-sm font-semibold text-on-surface mb-2 leading-tight">Initialize ping conversion sequence for cluster alpha-9</h3>
+<div class="flex justify-between items-center mt-sm pt-sm border-t border-surface-variant">
+<div class="flex items-center gap-xs">
+<img alt="Owner" class="w-[20px] h-[20px] rounded-full object-cover border border-outline-variant" data-alt="Tiny avatar headshot of a developer, neutral expression, clean corporate lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmPnue3yjk_tWKdnCJ9i_9d5dKkCHIJErKKl__sastxtDPE5bIi3rWKAiz_1Ii-UpQ6BoC2nFDqJq5-VgY8Sqy3DO-kX9fl4u_HlA7jzRNmYxpXAj8SXWSUxxmmOXcmn28mT9SwsWklwQ8_sJ2J26yhh8cFuhefNgYB4yBySQTwRu0qxHIvZhPQ22SSPpcha2RodDkh9oa2AsnbQnkMDjUPwnj8Mz7MkTLNTzkHhrow2nDny1kaO9P9tzGrbbxC9HvA1SJ5rDzNwzI"/>
+<span class="text-label-caps font-label-caps text-secondary">J. Doe</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 text-primary hover:bg-secondary-container rounded-sm p-[2px] transition-all"><span class="material-symbols-outlined text-[18px]">play_arrow</span></button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT p-sm shadow-sm hover:border-primary cursor-pointer transition-colors group">
+<div class="flex justify-between items-start mb-sm">
+<div class="text-code-sm font-code-sm text-secondary bg-surface-variant px-1 rounded-sm border border-outline-variant">RT-8495</div>
+<span class="text-label-caps font-label-caps text-secondary">15m ago</span>
+</div>
+<h3 class="text-body-sm font-body-sm font-semibold text-on-surface mb-2 leading-tight">Awaiting payload validation from upstream</h3>
+<div class="flex justify-between items-center mt-sm pt-sm border-t border-surface-variant">
+<div class="flex items-center gap-xs">
+<div class="w-[20px] h-[20px] rounded-full bg-secondary text-on-secondary flex items-center justify-center text-label-caps font-label-caps">SYS</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 text-primary hover:bg-secondary-container rounded-sm p-[2px] transition-all"><span class="material-symbols-outlined text-[18px]">play_arrow</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- LANE: Converting -->
+<div class="kanban-lane">
+<div class="p-sm border-b border-outline-variant bg-surface rounded-t-DEFAULT flex justify-between items-center shrink-0">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#3b82f6]"></span>
+<span class="text-label-caps font-label-caps text-[#1d4ed8] font-bold">Converting</span>
+<span class="text-label-caps font-label-caps text-outline bg-surface-variant px-1 rounded-sm ml-1">2</span>
+</div>
+<button class="text-secondary hover:bg-surface-variant rounded-sm p-[2px]"><span class="material-symbols-outlined text-[16px]">more_horiz</span></button>
+</div>
+<div class="kanban-cards-container">
+<!-- Card 3 -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT p-sm shadow-sm hover:border-primary cursor-pointer transition-colors group ring-1 ring-primary ring-offset-1">
+<div class="flex justify-between items-start mb-sm">
+<div class="text-code-sm font-code-sm text-secondary bg-surface-variant px-1 rounded-sm border border-outline-variant">RT-8488</div>
+<span class="bg-[#dbeafe] text-[#1e40af] text-label-caps font-label-caps px-1 rounded-sm flex items-center gap-[2px]">
+<span class="material-symbols-outlined text-[12px]">sync</span> In Progress
+                                </span>
+</div>
+<h3 class="text-body-sm font-body-sm font-semibold text-on-surface mb-2 leading-tight">Batch conversion of legacy ping telemetry</h3>
+<div class="w-full bg-surface-variant rounded-full h-1 mb-2">
+<div class="bg-[#3b82f6] h-1 rounded-full" style="width: 45%"></div>
+</div>
+<div class="flex justify-between items-center mt-sm pt-sm border-t border-surface-variant">
+<div class="flex items-center gap-xs">
+<img alt="Owner" class="w-[20px] h-[20px] rounded-full object-cover border border-outline-variant" data-alt="Tiny avatar headshot, female engineer, wearing glasses, dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoP8maI0vHA8HZ3O4vKkLqFEHWCpHc3k43LszVL0VRjPpEO9P2RJ1bDpU_Qj5zro9CQtYLcPQmbofaf7rlDNXGLgNID3S6Cg_wCUP6dTnxrcnWEO7QQsMXhOAsvSGDsXCLbRncwEof-wNGb3Rpe6s72VPD_DTATuOrnp2VeCf6ycIQoOb_XJlYTzsO5m6nz8MMHRBtUQZmwa70apRfYlZFATTWB0RgI2MWlfOydJCQ12qfCXSZ_RYK9vbjofKG21LSv-V8tm0_fHfb"/>
+<span class="text-label-caps font-label-caps text-secondary">A. Chen</span>
+</div>
+<button class="opacity-0 group-hover:opacity-100 text-secondary hover:bg-surface-variant rounded-sm p-[2px] transition-all"><span class="material-symbols-outlined text-[18px]">pause</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- LANE: Verifying -->
+<div class="kanban-lane">
+<div class="p-sm border-b border-outline-variant bg-surface rounded-t-DEFAULT flex justify-between items-center shrink-0">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#f59e0b]"></span>
+<span class="text-label-caps font-label-caps text-[#b45309] font-bold">Verifying</span>
+<span class="text-label-caps font-label-caps text-outline bg-surface-variant px-1 rounded-sm ml-1">1</span>
+</div>
+<button class="text-secondary hover:bg-surface-variant rounded-sm p-[2px]"><span class="material-symbols-outlined text-[16px]">more_horiz</span></button>
+</div>
+<div class="kanban-cards-container">
+<!-- Card 4 (Blocked) -->
+<div class="bg-surface border border-error rounded-DEFAULT p-sm shadow-sm hover:shadow-md cursor-pointer transition-all group relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start mb-sm pl-xs">
+<div class="text-code-sm font-code-sm text-secondary bg-surface-variant px-1 rounded-sm border border-outline-variant">RT-8470</div>
+<span class="bg-[#fef2f2] text-error text-label-caps font-label-caps px-1 rounded-sm flex items-center gap-[2px] border border-[#fca5a5]">
+<span class="material-symbols-outlined text-[12px]">warning</span> Blocked
+                                </span>
+</div>
+<h3 class="text-body-sm font-body-sm font-semibold text-on-surface mb-2 leading-tight pl-xs">Checksum mismatch post-conversion</h3>
+<p class="text-label-caps font-label-caps text-error mb-2 pl-xs truncate">ERR: Hash validation failed on node 3</p>
+<div class="flex justify-between items-center mt-sm pt-sm border-t border-surface-variant pl-xs">
+<div class="flex items-center gap-xs">
+<div class="w-[20px] h-[20px] rounded-full bg-secondary text-on-secondary flex items-center justify-center text-label-caps font-label-caps">SYS</div>
+</div>
+<button class="text-primary hover:bg-secondary-container rounded-sm px-1 py-[2px] transition-all text-label-caps font-label-caps border border-outline-variant">Resolve</button>
+</div>
+</div>
+</div>
+</div>
+<!-- LANE: Completed -->
+<div class="kanban-lane">
+<div class="p-sm border-b border-outline-variant bg-surface rounded-t-DEFAULT flex justify-between items-center shrink-0">
+<div class="flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+<span class="text-label-caps font-label-caps text-[#047857] font-bold">Completed</span>
+<span class="text-label-caps font-label-caps text-outline bg-surface-variant px-1 rounded-sm ml-1">24</span>
+</div>
+<button class="text-secondary hover:bg-surface-variant rounded-sm p-[2px]"><span class="material-symbols-outlined text-[16px]">more_horiz</span></button>
+</div>
+<div class="kanban-cards-container opacity-70 hover:opacity-100 transition-opacity">
+<!-- Card 5 -->
+<div class="bg-surface border border-outline-variant rounded-DEFAULT p-sm shadow-sm cursor-pointer group">
+<div class="flex justify-between items-start mb-sm">
+<div class="text-code-sm font-code-sm text-secondary line-through">RT-8465</div>
+<span class="text-label-caps font-label-caps text-secondary">2h ago</span>
+</div>
+<h3 class="text-body-sm font-body-sm text-secondary mb-2 leading-tight line-clamp-1">Routine schema migration</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
