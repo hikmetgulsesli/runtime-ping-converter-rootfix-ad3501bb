@@ -153,7 +153,7 @@ function AppShell() {
       'help-4': noop,
       'show-advanced-configuration-5': noop,
       'cancel-6': actCancelEdit(dispatch),
-      'save-record-7': () => actSaveRecord(dispatch)(state.selectedId ?? undefined),
+      'save-record-7': actSaveRecord(dispatch, state.selectedId ?? undefined),
       'operations-1': navOperations,
       'board-2': navBoard,
       'insights-3': navInsights,

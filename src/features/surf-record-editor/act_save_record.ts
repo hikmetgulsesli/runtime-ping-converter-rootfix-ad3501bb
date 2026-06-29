@@ -6,9 +6,11 @@ import type { RuntimePingRecord } from '../runtime-ping-converter-rootfix/runtim
 
 type RuntimePingDispatch = Parameters<typeof saveRuntimePingRecord>[0];
 
-export function actSaveRecord(dispatch: RuntimePingDispatch) {
+export function actSaveRecord(
+  dispatch: RuntimePingDispatch,
+  id?: string,
+) {
   return (
-    id?: string,
     patch?: Partial<Omit<RuntimePingRecord, 'id' | 'createdAt'>>,
   ) => {
     saveRuntimePingRecord(dispatch, id, patch);
