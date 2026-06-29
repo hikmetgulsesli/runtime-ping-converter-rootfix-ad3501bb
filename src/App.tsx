@@ -17,11 +17,16 @@ import {
   setRuntimePingView,
   updateRuntimePingStatus,
 } from './features/runtime-ping-converter-rootfix/runtime-ping-converter-rootfix.store';
-import type { RuntimePingState, RuntimePingView } from './features/runtime-ping-converter-rootfix/runtime-ping-converter-rootfix.store';
-import {
-  runtimePingConverterRootfixRepo,
-  type RuntimePingRecord,
-} from './features/runtime-ping-converter-rootfix/runtime-ping-converter-rootfix.repo';
+import type {
+  RuntimePingState,
+  RuntimePingView,
+} from './features/runtime-ping-converter-rootfix/runtime-ping-converter-rootfix.store';
+import { actCreateRecord } from './features/surf-record-operations/act_create_record';
+import { actRetryLoad } from './features/surf-record-operations/act_retry_load';
+import { actSelectRecord } from './features/surf-record-operations/act_select_record';
+import { actCancelEdit } from './features/surf-record-editor/act_cancel_edit';
+import { actSaveRecord } from './features/surf-record-editor/act_save_record';
+import type { RuntimePingRecord } from './features/runtime-ping-converter-rootfix/runtime-ping-converter-rootfix.repo';
 
 function noop() {
   // Intentionally empty: action is not wired to business logic in this story.
@@ -63,8 +68,7 @@ function AppShell() {
 
   const selectAndEdit = (id: string | undefined) => {
     if (!id) return;
-    dispatch({ type: 'select', id });
-    dispatch(setRuntimePingView('editor'));
+    actSelectRecord(dispatch)(id);
   };
 
   const actions = useMemo(
@@ -105,12 +109,11 @@ function AppShell() {
 
   const operationsActions: RecordOperationsRuntimePingConverterRootfixProps['actions'] = useMemo(
     () => ({
-      'act-create-record-1': navEditor,
+      'act-create-record-1': actCreateRecord(dispatch),
       'settings-2': noop,
       'help-3': noop,
-      'act-retry-load-4': () =>
-        dispatch({ type: 'load', records: runtimePingConverterRootfixRepo.load() }),
-      'act-create-record-5': navEditor,
+      'act-retry-load-4': actRetryLoad(dispatch),
+      'act-create-record-5': actCreateRecord(dispatch),
       'status-all-6': () => dispatch({ type: 'setStatusFilter', statusFilter: 'all' }),
       'date-last-7-days-7': () => dispatch({ type: 'setDateRange', dateRange: '7d' }),
       'view-details-8': () => selectAndEdit(row1),
@@ -144,19 +147,13 @@ function AppShell() {
 
   const editorActions: RecordEditorRuntimePingConverterRootfixProps['actions'] = useMemo(
     () => ({
-      'new-record-1': () => {
-        dispatch({ type: 'select', id: null });
-        dispatch(setRuntimePingView('editor'));
-      },
+      'new-record-1': actCreateRecord(dispatch),
       'menu-2': noop,
       'settings-3': noop,
       'help-4': noop,
       'show-advanced-configuration-5': noop,
-      'cancel-6': navOperations,
-      'save-record-7': () => {
-        saveRuntimePingRecord(dispatch, state.selectedId ?? undefined);
-        dispatch(setRuntimePingView('operations'));
-      },
+      'cancel-6': actCancelEdit(dispatch),
+      'save-record-7': () => actSaveRecord(dispatch)(state.selectedId ?? undefined),
       'operations-1': navOperations,
       'board-2': navBoard,
       'insights-3': navInsights,
