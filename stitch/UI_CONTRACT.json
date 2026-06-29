@@ -1,0 +1,1028 @@
+[
+  {
+    "screenId": "2de2cf32083e4c55b5e1f97727121dc9",
+    "screenTitle": "Record Operations - Runtime Ping Converter Rootfix",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 137
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 142
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 146
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 150
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 362
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 366
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 370
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 374
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "Help",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "Status: All",
+        "line": 238
+      },
+      {
+        "type": "button",
+        "label": "Date: Last 7 Days",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 279
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 280
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 281
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 298
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 299
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 300
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 317
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 318
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 319
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 336
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 337
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 338
+      },
+      {
+        "type": "button",
+        "label": "Previous",
+        "line": 349
+      },
+      {
+        "type": "button",
+        "label": "1",
+        "line": 350
+      },
+      {
+        "type": "button",
+        "label": "2",
+        "line": 351
+      },
+      {
+        "type": "button",
+        "label": "3",
+        "line": 352
+      },
+      {
+        "type": "button",
+        "label": "Next",
+        "line": 354
+      },
+      {
+        "type": "input",
+        "label": "Search records by ID or Ping...",
+        "inputType": "text",
+        "placeholder": "Search records by ID or Ping...",
+        "line": 233
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 137
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 142
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 146
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 150
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 362
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 366
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 370
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 374
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "Help",
+        "line": 172
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "Create Record",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "Status: All",
+        "line": 238
+      },
+      {
+        "type": "button",
+        "label": "Date: Last 7 Days",
+        "line": 245
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 279
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 280
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 281
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 298
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 299
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 300
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 317
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 318
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 319
+      },
+      {
+        "type": "button",
+        "label": "View Details",
+        "line": 336
+      },
+      {
+        "type": "button",
+        "label": "Edit",
+        "line": 337
+      },
+      {
+        "type": "button",
+        "label": "Delete",
+        "line": 338
+      },
+      {
+        "type": "button",
+        "label": "Previous",
+        "line": 349
+      },
+      {
+        "type": "button",
+        "label": "1",
+        "line": 350
+      },
+      {
+        "type": "button",
+        "label": "2",
+        "line": 351
+      },
+      {
+        "type": "button",
+        "label": "3",
+        "line": 352
+      },
+      {
+        "type": "button",
+        "label": "Next",
+        "line": 354
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search records by ID or Ping...",
+        "inputType": "text",
+        "placeholder": "Search records by ID or Ping...",
+        "line": 233
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 33,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "a8436a455f774bbb82493cc262a77fa2",
+    "screenTitle": "Record Editor - Runtime Ping Converter Rootfix",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 176
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 181
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 186
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 191
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 217
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 218
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 219
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 197
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 209
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 222
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "Show Advanced Configuration",
+        "line": 284
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 293
+      },
+      {
+        "type": "button",
+        "label": "Record",
+        "line": 296
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 251
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 256
+      },
+      {
+        "type": "input",
+        "label": "number",
+        "inputType": "number",
+        "line": 267
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 274
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 247
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 176
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 181
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 186
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 191
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 217
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 218
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 219
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 197
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 209
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 222
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "Show Advanced Configuration",
+        "line": 284
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 293
+      },
+      {
+        "type": "button",
+        "label": "Record",
+        "line": 296
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 251
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 256
+      },
+      {
+        "type": "input",
+        "label": "number",
+        "inputType": "number",
+        "line": 267
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 274
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 19,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "58ab19fd52374703ad2afd684a7426f0",
+    "screenTitle": "Pipeline Board - Runtime Ping Converter Rootfix",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 159
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 163
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 167
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 171
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 195
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 196
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 197
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 188
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 208
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 220
+      },
+      {
+        "type": "button",
+        "label": "sort",
+        "line": 223
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 239
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 254
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 268
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 281
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 301
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 314
+      },
+      {
+        "type": "button",
+        "label": "Resolve",
+        "line": 332
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 345
+      },
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 203
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 159
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 163
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 167
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 171
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 195
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 196
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 197
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 188
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 208
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 220
+      },
+      {
+        "type": "button",
+        "label": "sort",
+        "line": 223
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 239
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 254
+      },
+      {
+        "type": "button",
+        "label": "play_arrow",
+        "line": 268
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 281
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 301
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 314
+      },
+      {
+        "type": "button",
+        "label": "Resolve",
+        "line": 332
+      },
+      {
+        "type": "button",
+        "label": "more_horiz",
+        "line": 345
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 203
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 22,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "e6db56cc034c4db886f9d4213f6b0813",
+    "screenTitle": "Insights - Runtime Ping Converter Rootfix",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 137
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 138
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 151
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 155
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 159
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 147
+      },
+      {
+        "type": "button",
+        "label": "Filter Insights",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "Export Summary",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "1H",
+        "line": 258
+      },
+      {
+        "type": "button",
+        "label": "24H",
+        "line": 259
+      },
+      {
+        "type": "button",
+        "label": "7D",
+        "line": 260
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 137
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 138
+      },
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 151
+      },
+      {
+        "type": "link",
+        "label": "Board",
+        "href": "#",
+        "line": 155
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 159
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 163
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "help",
+        "line": 130
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 147
+      },
+      {
+        "type": "button",
+        "label": "Filter Insights",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "Export Summary",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "1H",
+        "line": 258
+      },
+      {
+        "type": "button",
+        "label": "24H",
+        "line": 259
+      },
+      {
+        "type": "button",
+        "label": "7D",
+        "line": 260
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 15,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
