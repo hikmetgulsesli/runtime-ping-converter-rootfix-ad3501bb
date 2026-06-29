@@ -16,7 +16,10 @@ export function createDefaultRuntimePingRecord(
 ): RuntimePingRecord {
   const now = new Date().toISOString();
   return {
-    id: crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`,
+    id:
+      typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function'
+        ? crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(36).slice(2)}`,
     title: 'New Runtime Ping',
     ping: 0,
     status: 'idle',

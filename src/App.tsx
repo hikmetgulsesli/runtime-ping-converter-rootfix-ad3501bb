@@ -71,7 +71,10 @@ function AppShell() {
     () => ({
       setView: (view: Parameters<typeof setRuntimePingView>[0]) =>
         dispatch(setRuntimePingView(view)),
-      saveRecord: (id?: string) => saveRuntimePingRecord(dispatch, id),
+      saveRecord: (
+        id?: string,
+        patch?: Partial<Omit<RuntimePingRecord, 'id' | 'createdAt'>>,
+      ) => saveRuntimePingRecord(dispatch, id, patch),
       updateStatus: (id: string | undefined, status: Parameters<typeof updateRuntimePingStatus>[2]) =>
         updateRuntimePingStatus(dispatch, id, status),
       deleteRecord: (id: string | undefined) => deleteRuntimePingRecord(dispatch, id),
@@ -94,6 +97,9 @@ function AppShell() {
       storageStatus: typeof localStorage !== 'undefined' ? 'persisted' : 'unavailable',
       lastError: state.error,
       activePanel: state.view,
+    };
+    return () => {
+      delete window.app;
     };
   }, [state, actions, selectedRecord]);
 

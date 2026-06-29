@@ -20,7 +20,7 @@ export interface RuntimePingState {
 }
 
 const initialState: RuntimePingState = {
-  records: [],
+  records: runtimePingConverterRootfixRepo.load(),
   view: 'operations',
   selectedId: null,
   query: '',
@@ -93,9 +93,7 @@ const RuntimePingContext = createContext<RuntimePingContextValue | null>(null);
 export function RuntimePingConverterRootfixProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    dispatch({ type: 'load', records: runtimePingConverterRootfixRepo.load() });
-  }, []);
+  // Initial load is handled synchronously in initialState.
 
   useEffect(() => {
     runtimePingConverterRootfixRepo.save(state.records);
@@ -122,11 +120,15 @@ export function useRuntimePingConverterRootfix() {
 export const setRuntimePingView = (view: RuntimePingView) =>
   ({ type: 'setView' as const, view });
 
-export function saveRuntimePingRecord(dispatch: React.Dispatch<RuntimePingAction>, id?: string) {
+export function saveRuntimePingRecord(
+  dispatch: React.Dispatch<RuntimePingAction>,
+  id?: string,
+  patch?: Partial<Omit<RuntimePingRecord, 'id' | 'createdAt'>>,
+) {
   if (id) {
-    dispatch({ type: 'update', id, patch: { updatedAt: new Date().toISOString() } });
+    dispatch({ type: 'update', id, patch: { ...patch, updatedAt: new Date().toISOString() } });
   } else {
-    dispatch({ type: 'add', record: createDefaultRuntimePingRecord() });
+    dispatch({ type: 'add', record: createDefaultRuntimePingRecord(patch) });
   }
 }
 
