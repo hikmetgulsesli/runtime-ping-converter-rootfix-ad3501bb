@@ -11,9 +11,13 @@ export function actSaveRecord(
   id?: string,
 ) {
   return (
-    patch?: Partial<Omit<RuntimePingRecord, 'id' | 'createdAt'>>,
+    patch?: Partial<Omit<RuntimePingRecord, 'id' | 'createdAt'>> | unknown,
   ) => {
-    saveRuntimePingRecord(dispatch, id, patch);
+    const cleanPatch =
+      patch && typeof patch === 'object' && ('nativeEvent' in patch || 'target' in patch)
+        ? undefined
+        : (patch as Partial<Omit<RuntimePingRecord, 'id' | 'createdAt'>>);
+    saveRuntimePingRecord(dispatch, id, cleanPatch);
     dispatch(setRuntimePingView('operations'));
   };
 }
